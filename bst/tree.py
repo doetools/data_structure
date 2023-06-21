@@ -43,3 +43,5 @@ def preorder_traverse(root):
 
 x_1 = preorder_traverse(root)
 print(x_1)
+
+# %%
