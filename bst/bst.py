@@ -1,9 +1,9 @@
 # %%
 
 from tree import preorder_construct, TreeNode, preorder_traverse
-
 x = [6, 4, 3, None, None, 5, None, None, 8, 7, None, None, 9, None, None]
 
+# %%
 root = preorder_construct(x)
 
 
@@ -42,4 +42,43 @@ def add(root, target):
 
 
 add(root, 11)
+add(root, 1)
+print(preorder_traverse(root))
+
+# %%
+
+
+def delete(root, target):
+    """
+    suppose node.val == target:
+
+    if node has no child: delete
+
+    if node has only right child: replace node with right child
+
+    if node has left node: find left right most node and link the node's
+    right child to it.
+    """
+
+    pass
+
+
+# %%
+root = preorder_construct(x)
+print(preorder_traverse(root))
+
+
+def flip(root):
+    if not root:
+        return root
+
+    root.left = flip(root.left)
+    root.right = flip(root.right)
+
+    root.left, root.right = root.right, root.left
+
+    return root
+
+
+root = flip(root)
 print(preorder_traverse(root))
